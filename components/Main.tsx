@@ -61,8 +61,8 @@ export default function Main(props) {
 					azimuth={0.25}
 					{...props}
 				/>
-				// <color args={['#000']} attach="background" />
-				<directionalLight intensity={1} />
+				{/* // <color args={['#fff']} attach="background" /> */}
+				{/* <directionalLight intensity={1} /> */}
 				<ambientLight intensity={0.5} color="#fff" />
 				<Stages />
 			</Canvas>

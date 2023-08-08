@@ -13,7 +13,7 @@ type GLTFResult = GLTF & {
     Cylinder003: THREE.Mesh
   }
   materials: {
-    Material: THREE.MeshStandardMaterial
+    Material: THREE.MeshBasicMaterial
   }
 }
 
