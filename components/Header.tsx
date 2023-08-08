@@ -1,9 +1,8 @@
 import Head from 'next/head';
 
-const titleDefault = 'Portal | Thomas Matlock';
+const titleDefault = 'Kitchen Items | Thomas Matlock';
 const url = 'https://www.thomasmatlock.com';
-const description =
-	'Creative developer, designer, and artist. I create immersive experiences that are both beautiful and functional';
+const description = 'Creative developer and film-maker living in Athens.';
 const author = 'Thomas Matlock ';
 
 export default function Header({ title = titleDefault }) {
