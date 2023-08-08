@@ -50,7 +50,8 @@ export default function Stages() {
 			>
 				<LOD models={meshes} distances={doorwayDistances} />
 			</Float> */}
-			<RollingPin />
+			<LOD models={meshes} distances={doorwayDistances} />
+			{/* <RollingPin /> */}
 		</>
 	);
 }
