@@ -1,0 +1,430 @@
+// $ringsWidth: 32px;
+$ringsWidth: 28px;
+// $ringsWidth: 4vh;
+@keyframes rotate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg) scale(1);
+    }
+}
+
+@keyframes abilityAppear {
+    0% {
+        transform: scale(1) translate(0%, calc(50vh - 0rem));
+    }
+    50% {
+        transform: scale(1.001) translate(0%, calc(50vh - 24px));
+    }
+    100% {
+        transform: scale(1) translate(0%, calc(50vh - 0rem));
+    }
+}
+
+@keyframes IconAppear {
+    0% {
+        opacity: 0;
+        // transform: scale(0) translateY(-50vh);
+        // transform: scale(0) translateY(0px);
+    }
+    90% {
+        // opacity: 0.2;
+        // transform: scale(1.15);
+    }
+    100% {
+        // opacity: 1;
+    }
+}
+
+.parent:hover {
+    // animation: none !important;
+    animation: beat 0.33s ease-in-out alternate;
+    // $ringsWidth: 28px;
+}
+
+.parent {
+    // animation: abilityAppear 3s ease-in-out;
+    // animation: IconAppear 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.parent:hover .container {
+    filter: invert(1);
+    transition: all 1s ease;
+    // $ringsWidth: 28px;
+    // animation: beat 0.33s ease-in-out alternate;
+    // background: url('/public/img/nebula.webp') repeat;
+}
+
+.abstract-ring,
+.ring {
+    filter: grayscale(1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0px;
+    height: 0px;
+    border: 16px solid #336e7b;
+    background-size: 50% 50% !important;
+    // background: url('/public/img/nebula.webp') repeat;
+}
+
+.ring:before,
+.ring:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    top: 50%;
+    left: 50%;
+    background: rgba(0, 0, 0, 0.15);
+    background: url('/public/img/nebula.webp') repeat;
+}
+
+.ring:before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.ring:after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.ring {
+    filter: grayscale(1);
+    // background: url('/public/img/nebula.webp') repeat;
+    transition: 0s all ease-in-out !important;
+    box-shadow: 0px 0px 5px #000 inset;
+}
+
+.parent:hover * .ring {
+    box-shadow: 0px 0px 5px white inset;
+}
+
+.ring:hover {
+    filter: grayscale(0);
+    background: transparent;
+    box-shadow: 0px 0px 5px black;
+    box-shadow: 0px 0px 5px black inset;
+}
+
+.ring:hover~.ring {
+    box-shadow: 0px 0px 5px white inset;
+}
+
+.ring:nth-child(1) {
+    width: $ringsWidth * 14;
+    height: $ringsWidth * 14;
+    border-radius: $ringsWidth * 14;
+    background: rgba(249, 249, 249, 0.25);
+    border-left-color: rgba(249, 249, 249, 0.1);
+    border-right-color: rgba(249, 249, 249, 0.1);
+    border-top-color: #f9f9f9;
+    border-bottom-color: #f9f9f9;
+    -webkit-animation: rotate 8.5714285714s linear infinite;
+    animation: rotate 8.5714285714s linear infinite;
+    &:hover {
+        filter: invert(1);
+        // background: url('/public/img/nebula.webp') repeat;
+    }
+}
+
+.ring:nth-child(1):before,
+.ring:nth-child(1):after {
+    background: rgba(249, 249, 249, 0.75);
+}
+
+.ring:nth-child(2) {
+    width: $ringsWidth * 13;
+    height: $ringsWidth * 13;
+    border-radius: $ringsWidth * 13;
+    background: rgba(236, 236, 236, 0.25);
+    border-left-color: rgba(236, 236, 236, 0.1);
+    border-right-color: rgba(236, 236, 236, 0.1);
+    border-top-color: #ececec;
+    border-bottom-color: #ececec;
+    -webkit-animation: rotate 9.2307692308s linear infinite;
+    animation: rotate 9.2307692308s linear infinite;
+    &:hover {
+        filter: invert(1);
+        // background: url('/public/img/diagram.jpg') repeat;
+    }
+}
+
+.ring:nth-child(2):before,
+.ring:nth-child(2):after {
+    background: rgba(236, 236, 236, 0.75);
+}
+
+.ring:nth-child(3) {
+    width: $ringsWidth * 12;
+    height: $ringsWidth * 12;
+    border-radius: $ringsWidth * 12;
+    background: rgba(193, 193, 193, 0.25);
+    border-left-color: rgba(193, 193, 193, 0.1);
+    border-right-color: rgba(193, 193, 193, 0.1);
+    border-top-color: #c1c1c1;
+    border-bottom-color: #c1c1c1;
+    -webkit-animation: rotate 10s linear infinite;
+    animation: rotate 10s linear infinite;
+    &:hover {
+        filter: invert(1);
+        // background: url('/public/img/watch.jpg') repeat;
+    }
+}
+
+.ring:nth-child(3):before,
+.ring:nth-child(3):after {
+    background: rgba(193, 193, 193, 0.75);
+}
+
+.ring:nth-child(4) {
+    width: $ringsWidth * 11;
+    height: $ringsWidth * 11;
+    border-radius: $ringsWidth * 11;
+    background: rgba(181, 180, 181, 0.25);
+    border-left-color: rgba(181, 180, 181, 0.1);
+    border-right-color: rgba(181, 180, 181, 0.1);
+    border-top-color: #b5b4b5;
+    border-bottom-color: #b5b4b5;
+    -webkit-animation: rotate 10.9090909091s linear infinite;
+    animation: rotate 10.9090909091s linear infinite;
+    &:hover {
+        filter: invert(1);
+        // background: url('/public/img/ink.jpg') repeat;
+    }
+}
+
+.ring:nth-child(4):before,
+.ring:nth-child(4):after {
+    background: rgba(181, 180, 181, 0.75);
+}
+
+.ring:nth-child(5) {
+    width: $ringsWidth * 10;
+    height: $ringsWidth * 10;
+    border-radius: $ringsWidth * 10;
+    background: rgba(168, 167, 168, 0.25);
+    border-left-color: rgba(168, 167, 168, 0.1);
+    border-right-color: rgba(168, 167, 168, 0.1);
+    border-top-color: #a8a7a8;
+    border-bottom-color: #a8a7a8;
+    -webkit-animation: rotate 12s linear infinite;
+    animation: rotate 12s linear infinite;
+    &:hover {
+        filter: invert(1);
+        // background: url('/public/img/letter.jpg') repeat;
+    }
+}
+
+.ring:nth-child(5):before,
+.ring:nth-child(5):after {
+    background: rgba(168, 167, 168, 0.75);
+}
+
+.ring:nth-child(6) {
+    width: $ringsWidth * 9;
+    height: $ringsWidth * 9;
+    border-radius: $ringsWidth * 9;
+    background: rgba(127, 125, 127, 0.25);
+    border-left-color: rgba(127, 125, 127, 0.1);
+    border-right-color: rgba(127, 125, 127, 0.1);
+    border-top-color: #7f7d7f;
+    border-bottom-color: #7f7d7f;
+    -webkit-animation: rotate 13.3333333333s linear infinite;
+    animation: rotate 13.3333333333s linear infinite;
+    &:hover {
+        filter: invert(1);
+        // background: url('/public/img/hd.jpg') repeat;
+    }
+}
+
+.ring:nth-child(6):before,
+.ring:nth-child(6):after {
+    background: rgba(127, 125, 127, 0.75);
+}
+
+.ring:nth-child(7) {
+    width: $ringsWidth * 8;
+    height: $ringsWidth * 8;
+    border-radius: $ringsWidth * 8;
+    background: rgba(114, 113, 114, 0.25);
+    border-left-color: rgba(114, 113, 114, 0.1);
+    border-right-color: rgba(114, 113, 114, 0.1);
+    border-top-color: #727172;
+    border-bottom-color: #727172;
+    -webkit-animation: rotate 15s linear infinite;
+    animation: rotate 15s linear infinite;
+    &:hover {
+        filter: invert(1);
+        // background: url('/public/img/3d.jpg') repeat;
+    }
+}
+
+.ring:nth-child(7):before,
+.ring:nth-child(7):after {
+    background: rgba(114, 113, 114, 0.75);
+}
+
+.ring:nth-child(8) {
+    width: $ringsWidth * 7;
+    height: $ringsWidth * 7;
+    border-radius: $ringsWidth * 7;
+    background: rgba(101, 100, 101, 0.25);
+    border-left-color: rgba(101, 100, 101, 0.1);
+    border-right-color: rgba(101, 100, 101, 0.1);
+    border-top-color: #656465;
+    border-bottom-color: #656465;
+    -webkit-animation: rotate 17.1428571429s linear infinite;
+    animation: rotate 17.1428571429s linear infinite;
+    &:hover {
+        filter: invert(1);
+        // background: url('/public/img/letters.jpg') repeat;
+    }
+}
+
+.ring:nth-child(8):before,
+.ring:nth-child(8):after {
+    background: rgba(101, 100, 101, 0.75);
+}
+
+.ring:nth-child(9) {
+    width: $ringsWidth * 6;
+    height: $ringsWidth * 6;
+    border-radius: $ringsWidth * 6;
+    background: rgba(75, 75, 75, 0.25);
+    border-left-color: rgba(75, 75, 75, 0.1);
+    border-right-color: rgba(75, 75, 75, 0.1);
+    border-top-color: #4b4b4b;
+    border-bottom-color: #4b4b4b;
+    -webkit-animation: rotate 20s linear infinite;
+    animation: rotate 20s linear infinite;
+    &:hover {
+        filter: invert(1);
+        // background: url('/public/img/nebula.webp') repeat;
+    }
+}
+
+.ring:nth-child(9):before,
+.ring:nth-child(9):after {
+    background: rgba(75, 75, 75, 0.75);
+}
+
+.ring:nth-child(10) {
+    width: $ringsWidth * 5;
+    height: $ringsWidth * 5;
+    border-radius: $ringsWidth * 5;
+    background: rgba(62, 62, 62, 0.25);
+    border-left-color: rgba(62, 62, 62, 0.1);
+    border-right-color: rgba(62, 62, 62, 0.1);
+    border-top-color: #3e3e3e;
+    border-bottom-color: #3e3e3e;
+    -webkit-animation: rotate 24s linear infinite;
+    animation: rotate 24s linear infinite;
+    &:hover {
+        filter: invert(1);
+        // background: url('/public/img/system.jpg') repeat;
+    }
+}
+
+.ring:nth-child(10):before,
+.ring:nth-child(10):after {
+    background: rgba(62, 62, 62, 0.75);
+}
+
+.ring:nth-child(11) {
+    width: $ringsWidth * 4;
+    height: $ringsWidth * 4;
+    border-radius: $ringsWidth * 4;
+    background: rgba(49, 49, 49, 0.25);
+    border-left-color: rgba(49, 49, 49, 0.1);
+    border-right-color: rgba(49, 49, 49, 0.1);
+    border-top-color: #313131;
+    border-bottom-color: #313131;
+    -webkit-animation: rotate 30s linear infinite;
+    animation: rotate 30s linear infinite;
+    &:hover {
+        filter: invert(1);
+        // background: url('/public/img/diagram.jpg') repeat;
+    }
+}
+
+.ring:nth-child(11):before,
+.ring:nth-child(11):after {
+    background: rgba(49, 49, 49, 0.75);
+}
+
+.ring:nth-child(12) {
+    width: $ringsWidth * 3;
+    height: $ringsWidth * 3;
+    border-radius: $ringsWidth * 3;
+    background: rgba(26, 26, 26, 0.25);
+    border-left-color: rgba(26, 26, 26, 0.1);
+    border-right-color: rgba(26, 26, 26, 0.1);
+    border-top-color: #1a1a1a;
+    border-bottom-color: #1a1a1a;
+    -webkit-animation: rotate 40s linear infinite;
+    animation: rotate 40s linear infinite;
+    &:hover {
+        // background: url('/public/img/diagram.jpg') repeat;
+    }
+}
+
+.ring:nth-child(12):before,
+.ring:nth-child(12):after {
+    background: rgba(26, 26, 26, 0.75);
+}
+
+.ring:nth-child(13) {
+    width: $ringsWidth * 2;
+    height: $ringsWidth * 2;
+    border-radius: $ringsWidth * 2;
+    background: rgba(13, 13, 13, 0.25);
+    border-left-color: rgba(13, 13, 13, 0.1);
+    border-right-color: rgba(13, 13, 13, 0.1);
+    border-top-color: #0d0d0d;
+    border-bottom-color: #0d0d0d;
+    -webkit-animation: rotate 60s linear infinite;
+    animation: rotate 60s linear infinite;
+    &:hover {
+        filter: invert(1);
+        // background: url('/public/img/diagram.jpg') repeat;
+    }
+}
+
+.ring:nth-child(13):before,
+.ring:nth-child(13):after {
+    background: rgba(13, 13, 13, 0.75);
+}
+
+.ring:nth-child(14) {
+    width: $ringsWidth;
+    height: $ringsWidth;
+    border-radius: $ringsWidth;
+    background: rgba(0, 0, 0, 0.25);
+    border-left-color: rgba(0, 0, 0, 0.1);
+    border-right-color: rgba(0, 0, 0, 0.1);
+    border-top-color: #000;
+    border-bottom-color: #000;
+    -webkit-animation: rotate 120s linear infinite;
+    animation: rotate 120s linear infinite;
+    box-shadow: 0px 0px 0px transparent !important;
+    &:hover {
+        filter: invert(1);
+        // background: url('/public/img/diagram.jpg') repeat !important;
+    }
+}
+
+.ring:nth-child(14):before,
+.ring:nth-child(14):after {
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.container {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotate 20s linear reverse infinite;
+}

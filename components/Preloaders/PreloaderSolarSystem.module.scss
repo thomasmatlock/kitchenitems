@@ -1,0 +1,126 @@
+@keyframes spin {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes spin3D {
+    from {
+        transform: rotate3d(0.5, 0.5, 0.5, 360deg);
+    }
+    to {
+        transform: rotate3d(0deg);
+    }
+}
+
+@keyframes configure-clockwise {
+    0% {
+        transform: rotate(0);
+    }
+    25% {
+        transform: rotate(90deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    75% {
+        transform: rotate(270deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes configure-xclockwise {
+    0% {
+        transform: rotate(45deg);
+    }
+    25% {
+        transform: rotate(-45deg);
+    }
+    50% {
+        transform: rotate(-135deg);
+    }
+    75% {
+        transform: rotate(-225deg);
+    }
+    100% {
+        transform: rotate(-315deg);
+    }
+}
+
+@keyframes pulse {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0.25;
+        transform: scale(0.75);
+    }
+}
+
+.spinner_box {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    // border: 1px solid #fafbfc;
+}
+
+.solar_system {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // border: 1px dotted #fafbfc;
+}
+
+.orbit {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #fafbfc;
+    border-radius: 50%;
+}
+
+.earth_orbit {
+    width: 165px;
+    height: 165px;
+    -webkit-animation: spin 12s linear 0s infinite;
+}
+
+.venus_orbit {
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 7.4s linear 0s infinite;
+}
+
+.mercury_orbit {
+    width: 90px;
+    height: 90px;
+    -webkit-animation: spin 3s linear 0s infinite;
+}
+
+.planet {
+    position: absolute;
+    top: -5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.sun {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background-color: #fff;
+}

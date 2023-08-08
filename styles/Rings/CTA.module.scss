@@ -1,0 +1,50 @@
+.cta__btn__hover {
+    pointer-events: all;
+    margin: 0.5rem auto;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 30vh;
+    font-size: 1rem;
+    height: clamp(50px, 7vh, 60px);
+    max-width: 250px;
+    border-radius: 3px;
+    color: #ffffff;
+    // color: #000;
+    width: clamp(250px, 30vh, 250px);
+    // background-image: linear-gradient(to left, #fff 0%, #fff 100%);
+    background-image: linear-gradient(to left, #da2c4d 0%, #ff8500 100%);
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        background-image: linear-gradient(to left, #fff 0%, #fff 100%);
+        // background-color: #fff !important;
+        color: #000 !important;
+    }
+}
+
+.cta__btn {
+    // height: 0px;
+    pointer-events: all;
+    // margin: 0.5rem auto;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 30vh;
+    font-size: 1rem;
+    height: clamp(50px, 7vh, 60px);
+    height: 0px;
+    max-width: 250px;
+    border-radius: 3px;
+    color: #ffffff;
+    // color: #000;
+    width: clamp(250px, 30vh, 250px);
+    // background-image: linear-gradient(to left, #fff 0%, #fff 100%);
+    background-image: linear-gradient(to left, #da2c4d 0%, #ff8500 100%);
+    color: transparent;
+    opacity: 0;
+    transform: translateY(-50px) scale(0);
+}

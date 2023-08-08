@@ -1,0 +1,54 @@
+@keyframes rotate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg) scale(1);
+    }
+}
+
+@keyframes abilityAppear {
+    0% {
+        transform: scale(1) translate(0%, calc(50vh - 0rem));
+    }
+    50% {
+        transform: scale(1.001) translate(0%, calc(50vh - 24px));
+    }
+    100% {
+        transform: scale(1) translate(0%, calc(50vh - 0rem));
+    }
+}
+
+@keyframes titleFadeIn {
+    0% {
+        // transform: scale(0);
+        opacity: 0;
+        transform: scale(0) translateY(50%);
+    }
+    100% {
+        // transform: scale(1);
+        opacity: 1;
+        // transform: scale(1) translateY(50%);
+    }
+}
+
+@keyframes titleFadeOut {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0) translateY(50%);
+        display: none;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

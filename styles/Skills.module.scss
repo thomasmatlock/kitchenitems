@@ -1,0 +1,57 @@
+.skills {
+    // border: 1px solid red;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.skill_icon {
+    &:hover .skill_tooltip {
+        display: flex;
+        border: 1px dotted red;
+        transform: translateY(-50%);
+        z-index: 100;
+    }
+    // position: absolute;
+}
+
+.skill_container {
+    // border: 1px solid blue;
+    // width: 100%;
+    // height: 100%;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: flex-end;
+    // align-items: center;
+}
+
+.skill_tooltip {
+    top: 0;
+    font-size: 14px;
+    background: #ffffff;
+    color: #ffffff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+// .taskbar
+.tooltip::before {
+    position: absolute;
+    content: '';
+    height: 8px;
+    width: 8px;
+    background: #ffffff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}

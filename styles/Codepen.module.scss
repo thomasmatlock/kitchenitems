@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+.taskbar {
+    display: inline-flex;
+    list-style: none;
+}
+
+@keyframes IconAppear {
+    0% {
+        // opacity: 0;
+        transform: scale(0) translateY(-40vh);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.taskbar .icon {
+    // border: 1px solid red;
+    position: relative;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 4px;
+    width: 28px;
+    height: 28px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.taskbar .tooltip {
+    position: absolute;
+    // border: 1px solid red;
+    top: 0;
+    width: 250px;
+    font-size: 14px;
+    background: #ffffff;
+    color: #ffffff;
+    color: #000;
+    padding: 8px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.tooltip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+}
+
+.tooltip__title {
+    font-weight: 600;
+    font-size: 1rem;
+    // margin-top: 8px;
+}
+
+.tooltip__title,
+.tooltip__description {
+    // margin: 4px;
+    // color: #000;
+}
+
+.tooltip__description {
+    white-space: pre-wrap;
+    text-align: center;
+}
+
+.icon_svg {
+    // animation-delay: 1s;
+    height: 1.5rem;
+    // margin: 0 4px;
+    margin-top: 4px;
+    transition: 0.1s ease-in-out;
+    // transition: all 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: 0.5s ease-in-out;
+    &:hover {
+        transition: 0.5s ease-in-out;
+        // height: 32px;
+        cursor: pointer;
+        // transform: scale(1.1);
+        filter: drop-shadow(0px 10px 10px rgb(0 0 0 / 0.5));
+        text-shadow: 0 10px 10px rgba(0, 0, 0, 1);
+    }
+}
+
+.taskbar {
+    margin-bottom: 8px;
+    // border: 1px solid red;
+}
+
+.taskbar .tooltip::before {
+    position: absolute;
+    content: '';
+    height: 8px;
+    width: 8px;
+    background: #ffffff;
+    bottom: -3px;
+    left: 50%;
+    // transform: translate(-50%) rotate(45deg);
+    transition: all 0.1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.taskbar .icon:hover .tooltip {
+    // top: -96px;
+    // top: -200% !important;
+    transform: translateY(-128px);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    z-index: 10;
+}
+
+.taskbar .icon:hover span,
+.taskbar .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.icon_svg {
+    // filter: grayscale(100%) saturate(2000);
+    width: auto;
+    filter: grayscale(100%);
+}
+
+.icon:hover .icon_svg {
+    filter: grayscale(0%);
+    transition: 0s ease-in-out !important;
+    // border: 1px solid red;
+}
+
+@keyframes abilityAppear {
+    0% {
+        // opacity: 0;
+        // z-index: -100;
+        transform: scale(1) translate(-0px, calc(-2000px));
+    }
+    60% {
+        transform: scale(10) translate(0%, calc(-50vh - 0rem));
+        // transform: scale(1.001);
+        // transform: scale(1.001) translate(0%, calc(50vh - 24px));
+    }
+    100% {
+        transform: scale(10);
+    }
+}
+
+.icon {
+    animation: IconAppear 2s linear;
+}
+
+.icon:hover {
+    // animation: IconAppear 2s linear;
+    // animation: abilityAppear 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}

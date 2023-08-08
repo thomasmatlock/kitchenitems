@@ -1,0 +1,15 @@
+body {
+    overflow: hidden;
+    background: #fff;
+}
+
+* {
+    transition: 1s all ease-in-out;
+    // background-size: 100% 100% !important;
+    // background-size: contain !important;
+    // background-size: cover !important;
+}
+
+p {
+    user-select: none;
+}

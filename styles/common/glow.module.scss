@@ -1,0 +1,19 @@
+.glow {
+    transition: 0.1s !important;
+    &__light:hover {
+        // box-shadow: 0 0 5px #000, 0 0 25px #000, 0 0 50px #000, 0 0 200px #000;
+        box-shadow: 0 0 25px #000, 0 0 50px #000, 0 0 200px #000;
+        transition: 2s !important;
+        // transition: 0.1s;
+    }
+    &__dark:hover {
+        box-shadow: 0 0 5px #fff, 0 0 25px #ffffff, 0 0 50px #fff, 0 0 200px rgb(255, 255, 255);
+        transition: 2s !important;
+        // transition: 0.1s;
+    }
+    &__dark__cta:hover {
+        box-shadow: 0 0 5px #fff, 0 0 20px #fff;
+        // transition: 0.1s all ease-in-out;
+        transition: 0s all ease-in-out;
+    }
+}

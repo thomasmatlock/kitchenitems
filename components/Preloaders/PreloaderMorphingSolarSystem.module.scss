@@ -1,0 +1,500 @@
+$intro-dark-color: #000;
+$intro-light-color: #fff;
+$angle: 5deg;
+$color1: #fff;
+$color2: #fff;
+$color3: #fff;
+$color4: #fff;
+$color5: #fff;
+$iteration: infinite;
+$goocolor: #fff;
+$orbitcolor: #fff;
+$bigsize: 8vw;
+$smallsize: 3vw;
+$containerwidth: 100vw;
+$animoffset1: 15vw;
+$animoffset2: 25vw;
+$animoffset3: 35vw;
+$animoffset4: 45vw;
+$animtime: 2s;
+$containerheight: 100vw;
+$radius1: $smallsize * 2;
+$radius2: $smallsize * 3;
+$radius3: $smallsize * 4;
+$radius4: $smallsize * 5;
+.game_loader {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    // width: 300px;
+    // height: 300px;
+    // background: $intro-dark-color;
+}
+
+.game-loader__btn {
+    position: fixed;
+    outline: none;
+    min-width: $bigsize * 2;
+    min-height: $bigsize/2;
+    bottom: 10vh;
+    z-index: 10001;
+    background: transparent;
+    border: 2px solid $intro-light-color;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    padding: 0.5em 1em;
+    transition: 1s;
+    &:hover {
+        background: $intro-light-color;
+    }
+}
+
+.game_loader__planet {
+    filter: url('#goo');
+    position: relative;
+    width: $containerwidth;
+    height: $containerheight;
+    &::after {
+        //big goo in middle
+        content: '';
+        display: block;
+        width: $bigsize;
+        height: $bigsize;
+        border-radius: 50%;
+        background: $goocolor;
+        box-shadow: $goocolor 0 0 24px 4px;
+        margin: 0 auto;
+        position: absolute;
+        top: $containerheight/2 - $bigsize/2;
+        left: $containerwidth/2 - $bigsize/2;
+        animation: scale $animtime * 2 linear infinite, color5 $animtime linear $iteration;
+    }
+    .loader_mini1 {
+        position: absolute;
+        width: $smallsize;
+        height: $smallsize;
+        border-radius: 50%;
+        // background:darken($goocolor, 10%);
+        background: $goocolor;
+        top: $containerheight/2 -$smallsize/2;
+        left: $containerwidth/2 - $smallsize/2;
+        animation: move1 $animtime linear $iteration, color1 $animtime linear $iteration;
+    }
+    .loader_mini2 {
+        position: absolute;
+        width: $smallsize * 1.2;
+        height: $smallsize * 1.2;
+        border-radius: 50%;
+        // background:darken($goocolor, 10%);
+        background: $goocolor;
+        top: $containerheight/2 -$smallsize/2;
+        left: $containerwidth/2 - $smallsize/2;
+        animation: move2 $animtime + 1s linear $iteration, color2 $animtime + 1s linear $iteration;
+    }
+    .loader_mini3 {
+        position: absolute;
+        width: $smallsize * 1.4;
+        height: $smallsize * 1.4;
+        border-radius: 50%;
+        // background:darken($goocolor, 15%);
+        background: $goocolor;
+        top: $containerheight/2 -$smallsize/2;
+        left: $containerwidth/2 - $smallsize/2;
+        animation: move3 $animtime + 2s linear $iteration, color3 $animtime + 2s linear $iteration;
+    }
+    .loader_mini4 {
+        position: absolute;
+        width: $smallsize * 1.6;
+        height: $smallsize * 1.6;
+        border-radius: 50%;
+        // background:darken($goocolor, 20%);
+        background: $goocolor;
+        top: $containerheight/2 -$smallsize/2;
+        left: $containerwidth/2 - $smallsize/2;
+        animation: move4 $animtime + 3s linear $iteration, color4 $animtime + 3s linear $iteration;
+    }
+    .loader-radius1 {
+        position: absolute;
+        width: $radius1 * 2;
+        height: $radius1 * 2;
+        border-radius: 50%;
+        // background:darken($goocolor, 10%);
+        border: 0.5px solid $goocolor;
+        opacity: 0.2;
+        background: transparent;
+        top: $containerheight/2 - $radius1;
+        left: $containerwidth/2 - $radius1;
+        transform: scale(0);
+        animation: orbit1 $animtime linear $iteration;
+    }
+    .loader_radius2 {
+        position: absolute;
+        width: $radius2 * 2;
+        height: $radius2 * 2;
+        border-radius: 50%;
+        // background:darken($goocolor, 10%);
+        border: 0.5px solid $goocolor;
+        opacity: 0.2;
+        background: transparent;
+        transform: scale(0);
+        top: $containerheight/2 - $radius2;
+        left: $containerwidth/2 - $radius2;
+        animation: orbit2 $animtime + 1s linear $iteration;
+    }
+    .loader_radius3 {
+        position: absolute;
+        width: $radius3 * 2;
+        height: $radius3 * 2;
+        border-radius: 50%;
+        // background:darken($goocolor, 10%);
+        border: 0.5px solid $goocolor;
+        opacity: 0.2;
+        background: transparent;
+        transform: scale(0);
+        top: $containerheight/2 - $radius3;
+        left: $containerwidth/2 - $radius3;
+        animation: orbit3 $animtime + 2s linear $iteration;
+    }
+    .loader_radius4 {
+        position: absolute;
+        width: $radius4 * 2;
+        height: $radius4 * 2;
+        border-radius: 50%;
+        // background:darken($goocolor, 10%);
+        border: 0.5px solid $goocolor;
+        opacity: 0.2;
+        background: transparent;
+        transform: scale(0);
+        top: $containerheight/2 - $radius4;
+        left: $containerwidth/2 - $radius4;
+        animation: orbit4 $animtime + 3s linear $iteration;
+    }
+}
+
+.game_loader__planet--color {
+    .loader-mini1 {
+        background: darken($goocolor, 5%);
+    }
+    .loader-mini2 {
+        background: darken($goocolor, 10%);
+    }
+    .loader-mini3 {
+        background: darken($goocolor, 15%);
+    }
+    .loader-mini4 {
+        background: darken($goocolor, 20%);
+    }
+}
+
+.btn-play {
+    left: $containerwidth/2 - ($bigsize + 1);
+}
+
+@keyframes move1 {
+    0% {
+        transform: skewX($angle) rotate(0deg) translateY(0em) rotate(0deg) skewX(-$angle) rotate(0deg);
+        // background:$goocolor;
+    }
+    10% {
+        transform: skewX($angle) rotate(180deg) translateY(-$radius1) rotate(-180deg) skewX(-$angle) rotate(180deg);
+    }
+    25% {
+        transform: skewX($angle) rotate(360deg) translateY(-$radius1 * 2) rotate(-360deg) skewX(-$angle) rotate(360deg);
+    }
+    50% {
+        transform: skewX($angle) rotate(720deg) translateY(-$radius1 * 2) rotate(720deg) skewX(-$angle) rotate(720deg);
+        // background:red;
+    }
+    75% {
+        transform: skewX($angle) rotate(1080deg) translateY(-$radius1 * 2) rotate(-1080deg) skewX(-$angle) rotate(1080deg);
+    }
+    90% {
+        transform: skewX($angle) rotate(1260deg) translateY(-$radius1) rotate(-1260deg) skewX(-$angle) rotate(1260deg);
+    }
+    100% {
+        transform: skewX($angle) rotate(1440deg) translateY(0em) rotate(-1440deg) skewX(-$angle) rotate(1440deg);
+        // background:$goocolor;
+    }
+}
+
+@keyframes move2 {
+    0% {
+        transform: skewX($angle) rotate(0deg) translateY(0em) rotate(0deg) skewX(-$angle) rotate(0deg);
+    }
+    10% {
+        transform: skewX($angle) rotate(180deg) translateY(-$radius2) rotate(-180deg) skewX(-$angle) rotate(180deg);
+    }
+    25% {
+        transform: skewX($angle) rotate(360deg) translateY(-$radius2 * 2) rotate(-360deg) skewX(-$angle) rotate(360deg);
+    }
+    50% {
+        transform: skewX($angle) rotate(720deg) translateY(-$radius2 * 2) rotate(720deg) skewX(-$angle) rotate(720deg);
+    }
+    75% {
+        transform: skewX($angle) rotate(1080deg) translateY(-$radius2 * 2) rotate(-1080deg) skewX(-$angle) rotate(1080deg);
+    }
+    90% {
+        transform: skewX($angle) rotate(1260deg) translateY(-$radius2) rotate(-1260deg) skewX(-$angle) rotate(1260deg);
+    }
+    100% {
+        transform: skewX($angle) rotate(1440deg) translateY(0em) rotate(-1440deg) skewX(-$angle) rotate(1440deg);
+    }
+}
+
+@keyframes move3 {
+    0% {
+        transform: skewX($angle) rotate(0deg) translateY(0em) rotate(0deg) skewX(-$angle) rotate(0deg);
+    }
+    10% {
+        transform: skewX($angle) rotate(180deg) translateY(-$radius3) rotate(-180deg) skewX(-$angle) rotate(180deg);
+    }
+    25% {
+        transform: skewX($angle) rotate(360deg) translateY(-$radius3 * 2) rotate(-360deg) skewX(-$angle) rotate(360deg);
+    }
+    50% {
+        transform: skewX($angle) rotate(720deg) translateY(-$radius3 * 2) rotate(720deg) skewX(-$angle) rotate(720deg);
+    }
+    75% {
+        transform: skewX($angle) rotate(1080deg) translateY(-$radius3 * 2) rotate(-1080deg) skewX(-$angle) rotate(1080deg);
+    }
+    90% {
+        transform: skewX($angle) rotate(1260deg) translateY(-$radius3) rotate(-1260deg) skewX(-$angle) rotate(1260deg);
+    }
+    100% {
+        transform: skewX($angle) rotate(1440deg) translateY(0em) rotate(-1440deg) skewX(-$angle) rotate(1440deg);
+    }
+}
+
+@keyframes move4 {
+    0% {
+        transform: skewX($angle) rotate(0deg) translateY(0em) rotate(0deg) skewX(-$angle) rotate(0deg);
+    }
+    10% {
+        transform: skewX($angle) rotate(180deg) translateY(-$radius4) rotate(-180deg) skewX(-$angle) rotate(180deg);
+    }
+    25% {
+        transform: skewX($angle) rotate(360deg) translateY(-$radius4 * 2) rotate(-360deg) skewX(-$angle) rotate(360deg);
+    }
+    50% {
+        transform: skewX($angle) rotate(720deg) translateY(-$radius4 * 2) rotate(720deg) skewX(-$angle) rotate(720deg);
+    }
+    75% {
+        transform: skewX($angle) rotate(1080deg) translateY(-$radius4 * 2) rotate(-1080deg) skewX(-$angle) rotate(1080deg);
+    }
+    90% {
+        transform: skewX($angle) rotate(1260deg) translateY(-$radius4) rotate(-1260deg) skewX(-$angle) rotate(1260deg);
+    }
+    100% {
+        transform: skewX($angle) rotate(1440deg) translateY(0em) rotate(-1440deg) skewX(-$angle) rotate(1440deg);
+    }
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1.5);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.5);
+    }
+}
+
+@keyframes orbit1 {
+    0% {
+        transform: scale(0);
+    }
+    10% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(2.2);
+    }
+    35% {
+        transform: scale(2.1);
+    }
+    50% {
+        transform: scale(2);
+    }
+    65% {
+        transform: scale(2.1);
+    }
+    75% {
+        transform: scale(2);
+    }
+    90% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes orbit2 {
+    0% {
+        transform: scale(0);
+    }
+    10% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(2.2);
+    }
+    35% {
+        transform: scale(2.1);
+    }
+    50% {
+        transform: scale(2);
+    }
+    65% {
+        transform: scale(2.1);
+    }
+    75% {
+        transform: scale(2);
+    }
+    90% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes orbit3 {
+    0% {
+        transform: scale(0);
+    }
+    10% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(2.2);
+    }
+    35% {
+        transform: scale(2.1);
+    }
+    50% {
+        transform: scale(2);
+    }
+    65% {
+        transform: scale(2.1);
+    }
+    75% {
+        transform: scale(2);
+    }
+    90% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes orbit4 {
+    0% {
+        transform: scale(0);
+    }
+    10% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(2.2);
+    }
+    35% {
+        transform: scale(2.1);
+    }
+    50% {
+        transform: scale(2);
+    }
+    65% {
+        transform: scale(2.1);
+    }
+    75% {
+        transform: scale(2);
+    }
+    90% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes color1 {
+    10% {
+        background: $goocolor;
+    }
+    50% {
+        background: $color1;
+    }
+    90% {
+        background: $goocolor;
+    }
+}
+
+@keyframes color2 {
+    10% {
+        background: $goocolor;
+    }
+    50% {
+        background: $color2;
+    }
+    90% {
+        background: $goocolor;
+    }
+}
+
+@keyframes color3 {
+    10% {
+        background: $goocolor;
+    }
+    50% {
+        background: $color3;
+    }
+    90% {
+        background: $goocolor;
+    }
+}
+
+@keyframes color4 {
+    10% {
+        background: $goocolor;
+    }
+    50% {
+        background: $color4;
+    }
+    90% {
+        background: $goocolor;
+    }
+}
+
+@keyframes color5 {
+    10% {
+        background: $goocolor;
+        box-shadow: $goocolor 0 0 24px 4px;
+    }
+    50% {
+        background: $color5;
+        box-shadow: $color5 0 0 24px 4px;
+    }
+    90% {
+        background: $goocolor;
+        box-shadow: $goocolor 0 0 24px 4px;
+    }
+}
+
+// svg {
+//     //Firefox bug fix
+//     position: absolute;
+//     z-index: -100;
+//     pointer-events: none;
+// }

@@ -1,0 +1,40 @@
+{
+	"compilerOptions": {
+		"incremental": true,
+		"target": "es2021",
+		"module": "commonjs",
+		"lib": ["dom", "es2021"],
+		"declaration": true,
+		"declarationMap": true,
+		"jsx": "preserve",
+		"strict": false,
+		"pretty": true,
+		"sourceMap": true,
+		"noUnusedLocals": false,
+		"noUnusedParameters": false,
+		"noImplicitReturns": false,
+		"noFallthroughCasesInSwitch": true,
+		"moduleResolution": "node",
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"resolveJsonModule": true,
+		"allowJs": true,
+		"plugins": [
+			{
+				"name": "next"
+			}
+		],
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"noEmit": true,
+		"isolatedModules": true
+	},
+	"include": [
+		"next-env.d.ts",
+		"**/*.ts",
+		"**/*.tsx",
+		"components/Model.tsx",
+		".next/types/**/*.ts"
+	],
+	"exclude": ["node_modules"]
+}
